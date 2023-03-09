@@ -1,10 +1,15 @@
 import { getMetals } from "./database.js"
+import { setMetal } from "./database.js"
 
 const metals = getMetals()
 
+//Setting state according to radio clicked
 document.addEventListener(
     "change",
     (event) => {
+        if (event.target.name === "metal") {
+            setMetal(parseInt(event.target.value))
+        }
     }
 )
 

@@ -4,11 +4,15 @@ import { JewelryStyles } from "./JewelryStyles.js"
 import { Metals } from "./Metals.js"
 import { Orders } from "./Orders.js"
 
-document.addEventListener(
-    "click",
-    (event) => {
+import { addCustomOrder } from "./database.js"
+
+document.addEventListener('click', e => {
+    const itemClicked = e.target
+    if (itemClicked.id.startsWith('orderButton')) {
+        addCustomOrder();
     }
-)
+
+})
 
 export const KneelDiamonds = () => {
     return `
